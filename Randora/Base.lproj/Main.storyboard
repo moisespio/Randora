@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Chewy.ttf">
+            <string>Chewy</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraViewController" customModule="Randora" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +21,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-ln-XA9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.57254901960000004" green="0.29803921570000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="erY-LJ-6a6">
+                                <rect key="frame" x="260" y="480" width="80" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yt9-RH-AWV" customClass="CustomUIView" customModule="Randora" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="IEA-rp-d9H"/>
+                                            <constraint firstAttribute="width" constant="50" id="nv0-em-VyD"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJQ-WO-pxH">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <connections>
+                                            <action selector="tappedCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIn-aa-1xb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="yt9-RH-AWV" firstAttribute="centerY" secondItem="erY-LJ-6a6" secondAttribute="centerY" id="34k-j8-HxV"/>
+                                    <constraint firstItem="XJQ-WO-pxH" firstAttribute="centerY" secondItem="erY-LJ-6a6" secondAttribute="centerY" id="5E8-TS-afn"/>
+                                    <constraint firstAttribute="height" constant="80" id="B1w-BN-7n3"/>
+                                    <constraint firstItem="XJQ-WO-pxH" firstAttribute="width" secondItem="erY-LJ-6a6" secondAttribute="width" id="RUf-UD-HYz"/>
+                                    <constraint firstItem="XJQ-WO-pxH" firstAttribute="centerX" secondItem="erY-LJ-6a6" secondAttribute="centerX" id="TMS-rJ-5d0"/>
+                                    <constraint firstItem="XJQ-WO-pxH" firstAttribute="height" secondItem="erY-LJ-6a6" secondAttribute="height" id="Zd1-mD-7qs"/>
+                                    <constraint firstItem="yt9-RH-AWV" firstAttribute="centerX" secondItem="erY-LJ-6a6" secondAttribute="centerX" id="aDp-ux-lVL"/>
+                                    <constraint firstAttribute="width" constant="80" id="g0i-jb-Kqx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-jV-YSa" customClass="CustomUIView" customModule="Randora" customModuleProvider="target">
+                                <rect key="frame" x="544" y="40" width="36" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N73-EU-bsq">
+                                        <rect key="frame" x="15" y="7" width="5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Chewy" family="Chewy" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcd-kB-5Ii">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                        <connections>
+                                            <action selector="tappedNewPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oZk-xO-ZMQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31372549019607843" green="0.8901960784313725" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Mcd-kB-5Ii" firstAttribute="height" secondItem="Iyg-jV-YSa" secondAttribute="height" id="Dqw-0T-mp5"/>
+                                    <constraint firstItem="Mcd-kB-5Ii" firstAttribute="centerX" secondItem="Iyg-jV-YSa" secondAttribute="centerX" id="Fxm-MA-dmJ"/>
+                                    <constraint firstAttribute="width" constant="36" id="HRY-Nx-0K3"/>
+                                    <constraint firstItem="N73-EU-bsq" firstAttribute="centerY" secondItem="Iyg-jV-YSa" secondAttribute="centerY" id="Muo-vQ-oHR"/>
+                                    <constraint firstItem="N73-EU-bsq" firstAttribute="centerX" secondItem="Iyg-jV-YSa" secondAttribute="centerX" id="TnU-e2-oQQ"/>
+                                    <constraint firstItem="Mcd-kB-5Ii" firstAttribute="width" secondItem="Iyg-jV-YSa" secondAttribute="width" id="a7a-rY-deK"/>
+                                    <constraint firstItem="Mcd-kB-5Ii" firstAttribute="centerY" secondItem="Iyg-jV-YSa" secondAttribute="centerY" id="oUP-HG-hK6"/>
+                                    <constraint firstAttribute="height" constant="36" id="tch-iM-L8a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="erY-LJ-6a6" secondAttribute="bottom" constant="40" id="60E-SB-VNH"/>
+                            <constraint firstItem="Iyg-jV-YSa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="ILQ-P4-fQ1"/>
+                            <constraint firstItem="B1j-ln-XA9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="It1-CW-yp5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B1j-ln-XA9" secondAttribute="bottom" id="Mrn-M8-rUj"/>
+                            <constraint firstAttribute="trailing" secondItem="Iyg-jV-YSa" secondAttribute="trailing" constant="20" id="Nfb-L7-1Fq"/>
+                            <constraint firstItem="erY-LJ-6a6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QJW-mY-am5"/>
+                            <constraint firstItem="B1j-ln-XA9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dgQ-m6-Px7"/>
+                            <constraint firstAttribute="trailing" secondItem="B1j-ln-XA9" secondAttribute="trailing" id="lg8-tQ-3fd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="viewButtonContainer" destination="erY-LJ-6a6" id="mvB-Ga-2oX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="337"/>
         </scene>
     </scenes>
 </document>

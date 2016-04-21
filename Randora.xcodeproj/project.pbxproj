@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		80F22D831CC90B7A001B9392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F22D821CC90B7A001B9392 /* AppDelegate.swift */; };
-		80F22D851CC90B7A001B9392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F22D841CC90B7A001B9392 /* ViewController.swift */; };
+		80F22D851CC90B7A001B9392 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F22D841CC90B7A001B9392 /* CameraViewController.swift */; };
 		80F22D881CC90B7A001B9392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F22D861CC90B7A001B9392 /* Main.storyboard */; };
 		80F22D8A1CC90B7A001B9392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F22D891CC90B7A001B9392 /* Assets.xcassets */; };
 		80F22D8D1CC90B7A001B9392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F22D8B1CC90B7A001B9392 /* LaunchScreen.storyboard */; };
+		80F22D971CC911E4001B9392 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F22D961CC911E4001B9392 /* CustomUIView.swift */; };
+		80F22D9A1CC91316001B9392 /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80F22D991CC91316001B9392 /* Chewy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80F22D7F1CC90B7A001B9392 /* Randora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F22D821CC90B7A001B9392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80F22D841CC90B7A001B9392 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80F22D841CC90B7A001B9392 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		80F22D871CC90B7A001B9392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80F22D891CC90B7A001B9392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80F22D8C1CC90B7A001B9392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80F22D8E1CC90B7A001B9392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80F22D961CC911E4001B9392 /* CustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomUIView.swift; path = Resources/CustomUIView.swift; sourceTree = "<group>"; };
+		80F22D991CC91316001B9392 /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		80F22D811CC90B7A001B9392 /* Randora */ = {
 			isa = PBXGroup;
 			children = (
+				80F22D951CC91158001B9392 /* Resources */,
 				80F22D821CC90B7A001B9392 /* AppDelegate.swift */,
-				80F22D841CC90B7A001B9392 /* ViewController.swift */,
+				80F22D941CC90BDB001B9392 /* Controller */,
 				80F22D861CC90B7A001B9392 /* Main.storyboard */,
 				80F22D891CC90B7A001B9392 /* Assets.xcassets */,
 				80F22D8B1CC90B7A001B9392 /* LaunchScreen.storyboard */,
 				80F22D8E1CC90B7A001B9392 /* Info.plist */,
 			);
 			path = Randora;
+			sourceTree = "<group>";
+		};
+		80F22D941CC90BDB001B9392 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				80F22D841CC90B7A001B9392 /* CameraViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		80F22D951CC91158001B9392 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80F22D981CC9130A001B9392 /* Fonts */,
+				80F22D961CC911E4001B9392 /* CustomUIView.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		80F22D981CC9130A001B9392 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				80F22D991CC91316001B9392 /* Chewy.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F22D8D1CC90B7A001B9392 /* LaunchScreen.storyboard in Resources */,
+				80F22D9A1CC91316001B9392 /* Chewy.ttf in Resources */,
 				80F22D8A1CC90B7A001B9392 /* Assets.xcassets in Resources */,
 				80F22D881CC90B7A001B9392 /* Main.storyboard in Resources */,
 			);
@@ -135,7 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F22D851CC90B7A001B9392 /* ViewController.swift in Sources */,
+				80F22D851CC90B7A001B9392 /* CameraViewController.swift in Sources */,
+				80F22D971CC911E4001B9392 /* CustomUIView.swift in Sources */,
 				80F22D831CC90B7A001B9392 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
